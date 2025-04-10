@@ -28,10 +28,12 @@ figure {
     -webkit-mask-composite: xor;
     -webkit-mask-clip: text, padding-box;
     margin: -1px;
+    
   }
   
   figure:hover figcaption {
     --_i: 0%;
+    
   }
   
   figure:hover img {
@@ -42,8 +44,11 @@ figure {
     figure figcaption {
       -webkit-mask: none;
       color: #fff;
+      text-decoration: none;
     }
   }
+
+  
   
   body {
     margin: 0;
@@ -307,4 +312,40 @@ input, textarea {
   border-radius: 5px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+/* profile */
+.review-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.package-card {
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.package-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+
+img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+h1, h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
 }

@@ -12,7 +12,7 @@ const Header = () => {
      <Navbar.Toggle />
      <Navbar.Collapse className="justify-content-end">
        <Navbar.Text>
-       Welcome, User!
+       Welcome
        </Navbar.Text>
      </Navbar.Collapse>
    </Container>

@@ -1,34 +1,44 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [gmailId, setGmailId] = useState('');
+  const [role, setRole] = useState('user'); // default role
   const navigate = useNavigate();
+
+  localStorage.setItem('user', JSON.stringify({
+    username,
+    role // 'admin' or 'user'
+  }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username && password && gmailId) {
       alert('Login Successful!');
-      navigate('/dashboard');
+      // Navigate based on role
+      if (role === 'admin') {
+        navigate('/admin/dashboard');
+      } else {
+        navigate('/user/dashboard');
+      }
     } else {
       alert('Please fill the form');
     }
   };
 
   return (
-    <div className="container-login" style={{marginTop:"100px"}} >
+    <div className="container-login" style={{ marginTop: "100px" }}>
       <div className="form-container">
         <h2 className="title">Login</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Username or Email</label>
+        <div className="form-group">
+            <label htmlFor="gmail-id">Username</label>
             <input
-              type="text"
+              type="username"
               id="username"
-              placeholder="Enter your username or email"
+              placeholder="Enter your username "
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -56,10 +66,21 @@ const Login = () => {
               required
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="role">Select Role</label>
+            <select
+              id="role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              required
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
           <button type="submit" className="login-button">Login</button>
         </form>
         <div className="footer">
-        
           <a href="/signup" className="footer-link">Don't have an account? Sign Up</a>
         </div>
       </div>

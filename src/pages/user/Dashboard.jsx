@@ -1,14 +1,12 @@
-import React from "react";
-import { Card, Row, Col, Container, Carousel } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import flower from "../assets/flower-card.jpg";
-import weddingDress from "../assets/weddingDress.jpg";
-import caterer from "../assets/caterer.jpg";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Card, Carousel, Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+// import userProfile from './userProfile'
 
 const Dashboard = () => {
   return (
-    <div className="">
+    <div>
+         <div className="">
       <div className="d-flex justify-content-center align-items-center ">
         <Card className="m-5 w-75  " style={{ border: "none " }}>
           <Row className="g-0 align-items-center">
@@ -42,23 +40,14 @@ const Dashboard = () => {
           </Row>
         </Card>
       </div>
+      <div>
+      <h2 className="text-center mt-3">Welcome to Your Dashboard</h2>
+      {/* <userProfile/> */}
+    </div>
+      
       <Container className="my-5">
         <Row className="g-4">
-          <Col xs={12} sm={6} md={4} lg={3}>
-            <Card className="shadow-sm " style={{ border: "none" }}>
-              <Card.Img
-                variant="top"
-                src={flower}
-                alt="Card Image"
-                //  height={'300px'}
-                className="img-fluid"
-                style={{ borderRadius: "20px", height: "300px" }}
-              />
-              <Card.Body className="text-center">
-                <Card.Title>FlowerWild</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
+         
 
           <Col xs={12} sm={6} md={4} lg={3}>
             <Card className="shadow-sm" style={{ border: "none" }}>
@@ -75,37 +64,10 @@ const Dashboard = () => {
             </Card>
           </Col>
 
-          <Col xs={12} sm={6} md={4} lg={3}>
-            <Card className="shadow-sm" style={{ border: "none" }}>
-              <Card.Img
-                variant="top"
-                src={weddingDress}
-                alt="Card Image"
-                height={"300px"}
-                style={{ borderRadius: "20px" }}
-              />
-              <Card.Body className="text-center">
-                <Card.Title>Wedding Dress</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col xs={12} sm={6} md={4} lg={3}>
-            <Card className="shadow-sm" style={{ border: "none" }}>
-              <Card.Img
-                variant="top"
-                src={caterer}
-                alt="Card Image"
-                height={"300px"}
-                style={{ borderRadius: "20px" }}
-              />
-              <Card.Body className="text-center">
-                <Card.Title>Caterer</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
+       
         </Row>
       </Container>
+      
 <div className="d-flex justify-content-center align-items-center">
 <Carousel interval={3000} className="mt-5 mb-5"> 
       <Carousel.Item>
@@ -161,7 +123,8 @@ const Dashboard = () => {
   
 
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Dashboard;
+export default Dashboard
