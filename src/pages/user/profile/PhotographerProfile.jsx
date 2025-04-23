@@ -9,23 +9,12 @@ const PhotographerProfile = () => {
         navigate(`/photographers/${id}/book`);
       };
 
-      const [reviews, setReviews] = useState([
-        { name: "John & Emma", comment: "Absolutely stunning photos! Professional & warm." },
-        { name: "Sarah", comment: "Captured every moment perfectly. Highly recommend!" },
-      ]);
+     
     
-      const [name, setName] = useState("");
-      const [comment, setComment] = useState("");
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        if (name && comment) {
-          const newReview = { name, comment };
-          setReviews([newReview, ...reviews]); // New on top
-          setName("");
-          setComment("");
-          alert("Thank you for your feedback! 🎉");
-        }
+      
       };
   return (
     <div>

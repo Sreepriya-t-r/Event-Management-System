@@ -13,7 +13,7 @@ const commonApi=async(httpMethod,endpoints,requestBody,requestHeader)=>{
         return res
     })
     .catch((err)=>{
-        return err
+        return err  
     })
 }
 export default commonApi
